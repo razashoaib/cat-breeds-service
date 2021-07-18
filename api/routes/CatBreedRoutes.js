@@ -9,16 +9,16 @@ const CatBreedRoutes = ({ logger }) => {
         let response;
         switch (type.toLowerCase()) {
         case REQUEST_TYPES.CHILD_FRIENDLY:
-            response = CatBreedService().getTopFiveChildFriendlyBreed(breeds);
+            response = CatBreedService().getTopFiveChildFriendlyBreeds(breeds);
             break;
         case REQUEST_TYPES.DOG_FRIENDLY:
-            response = CatBreedService().getTopFiveDogFriendlyBreed(breeds);
+            response = CatBreedService().getTopFiveDogFriendlyBreeds(breeds);
             break;
         case REQUEST_TYPES.STRANGER_FRIENDLY:
-            response = CatBreedService().getTopFiveStrangerFriendlyBreed(breeds);
+            response = CatBreedService().getTopFiveStrangerFriendlyBreeds(breeds);
             break;
         default:
-            response = CatBreedService().getTopCombinedBreed(breeds, 5);
+            response = CatBreedService().getTopFiveCombinedBreeds(breeds, 5);
         }
 
         res.send(response);

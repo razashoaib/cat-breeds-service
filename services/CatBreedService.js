@@ -1,22 +1,22 @@
 const CatBreedService = () => {
-    const getTopFiveChildFriendlyBreed = (breeds) => {
-        const topFiveChildFriendlyBreeds = breeds.filter((cat) => cat.child_friendly === 5);
-        return topFiveChildFriendlyBreeds;
+    const getTopFiveChildFriendlyBreeds = (breeds) => {
+        const topChildFriendlyBreeds = breeds.filter((cat) => cat.child_friendly === 5);
+        return topChildFriendlyBreeds.slice(0, 5);
     };
 
-    const getTopFiveDogFriendlyBreed = (breeds) => {
-        const topFiveChildFriendlyBreeds = breeds.filter((cat) => cat.dog_friendly === 5);
-        return topFiveChildFriendlyBreeds;
+    const getTopFiveDogFriendlyBreeds = (breeds) => {
+        const topChildFriendlyBreeds = breeds.filter((cat) => cat.dog_friendly === 5);
+        return topChildFriendlyBreeds.slice(0, 5);
     };
 
-    const getTopFiveStrangerFriendlyBreed = (breeds) => {
-        const topFiveChildFriendlyBreeds = breeds.filter((cat) => cat.stranger_friendly === 5);
-        return topFiveChildFriendlyBreeds;
+    const getTopFiveStrangerFriendlyBreeds = (breeds) => {
+        const topChildFriendlyBreeds = breeds.filter((cat) => cat.stranger_friendly === 5);
+        return topChildFriendlyBreeds.slice(0, 5);
     };
 
     // Get top (numOfResults) records for child_friendly, dog_friendly and stranger_friendly breeds
     // with equal weighting
-    const getTopCombinedBreed = (breeds, numOfResults) => {
+    const getTopFiveCombinedBreeds = (breeds, numOfResults) => {
         const topCombinedBreeds = [];
         let rating = 5;
         do {
@@ -32,10 +32,10 @@ const CatBreedService = () => {
     };
 
     return {
-        getTopFiveChildFriendlyBreed,
-        getTopFiveDogFriendlyBreed,
-        getTopFiveStrangerFriendlyBreed,
-        getTopCombinedBreed,
+        getTopFiveChildFriendlyBreeds,
+        getTopFiveDogFriendlyBreeds,
+        getTopFiveStrangerFriendlyBreeds,
+        getTopFiveCombinedBreeds,
     };
 };
 
